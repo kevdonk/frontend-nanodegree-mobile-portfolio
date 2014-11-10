@@ -1,9 +1,0 @@
-http://updates.html5rocks.com/2014/06/Automating-Web-Performance-Measurement
-
-http://yeoman.io/blog/performance-optimization.html
-
-gulp documentation and assorted links from there
-https://github.com/gulpjs/gulp/blob/master/docs/README.md  
-
-use gulp to push to github
-http://charliegleason.com/articles/deploying-to-github-pages-with-gulp 
