@@ -4,6 +4,7 @@ var concat = require('gulp-concat');
 var jshint = require('gulp-jshint');
 var minify = require('gulp-minify-css');
 var psi = require('psi');
+var deploy = require('gulp-gh-pages');
 var site = 'http://127.0.0.1:8000';
 
 
@@ -33,6 +34,11 @@ gulp.task('jshint', function() {
 	return gulp.src('js/*.js')
 	.pipe(jshint())
 	.pipe(jshint.reporter('default'));
+});
+
+gulp.task('deploy', function() {
+	return gulp.src("./dist/**/*")
+	.pipe(deploy())
 });
 
 gulp.task('watch', function() {
