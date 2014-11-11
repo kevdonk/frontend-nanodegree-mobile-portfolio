@@ -22,12 +22,14 @@ gulp.task('html', function() {
 gulp.task('png', function() {
 	return gulp.src('img/*.png')
 	.pipe(optipng({optimizationLevel: 4})())
+	.pipe(imgmin())
 	.pipe(gulp.dest('dist/img/'));
 });
 
 gulp.task('jpg', function() {
 	return gulp.src('img/*.jpg')
 	.pipe(jpegtran({progressive: true})())
+	.pipe(imgmin())
 	.pipe(gulp.dest('dist/img/'));
 });
 
