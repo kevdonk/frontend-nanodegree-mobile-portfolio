@@ -8,10 +8,12 @@ var imgmin = require('gulp-imagemin');
 var htmlmin = require('gulp-htmlmin');
 var deploy = require('gulp-gh-pages');
 var glob = require('glob');
+var inlinecss = require('gulp-inline-css');
 
 gulp.task('html', function() {
 	return gulp.src('*.html')
 	.pipe(htmlmin({collapseWhitespace: true}))
+	.pipe(inlinecss())
 	.pipe(gulp.dest('dist'));
 });
 
