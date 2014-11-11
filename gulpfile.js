@@ -7,6 +7,7 @@ var uncss = require('gulp-uncss');
 var imgmin = require('gulp-imagemin');
 var htmlmin = require('gulp-htmlmin');
 var deploy = require('gulp-gh-pages');
+var glob = require('glob');
 
 gulp.task('html', function() {
 	return gulp.src('*.html')
@@ -36,7 +37,7 @@ gulp.task('scripts', function() {
 
 gulp.task('css', function() {
 	return gulp.src('css/*.css')
-	.pipe(uncss({html: '*.html'}))
+	.pipe(uncss({html: glob.sync('*.html') }))
 	.pipe(cssmin())
 	.pipe(gulp.dest('dist/css/'));
 });
