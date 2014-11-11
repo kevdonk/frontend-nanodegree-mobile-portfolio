@@ -9,7 +9,8 @@ var htmlmin = require('gulp-htmlmin');
 var deploy = require('gulp-gh-pages');
 var glob = require('glob');
 var inlinecss = require('gulp-inline-css');
-var pngcrush = require('imagemin-pngcrush');
+var jpegtran = require('imagemin-jpegtran');
+var optipng = require('imagemin-optipng');
 
 gulp.task('html', function() {
 	return gulp.src('*.html')
@@ -20,21 +21,13 @@ gulp.task('html', function() {
 
 gulp.task('png', function() {
 	return gulp.src('img/*.png')
-	.pipe(imgmin({
-		progressive: true,
-		svgoPlugins: [{removeViewBox: false}],
-		use: [pngcrush()]
-	}))
+	.pipe(optipng({optimizationLevel: 4})())
 	.pipe(gulp.dest('dist/img/'));
 });
 
 gulp.task('jpg', function() {
 	return gulp.src('img/*.jpg')
-	.pipe(imgmin({
-		progressive: true,
-		svgoPlugins: [{removeViewBox: false}],
-		use: [pngcrush()]
-	}))
+	.pipe(jpegtran({progressive: true})())
 	.pipe(gulp.dest('dist/img/'));
 });
 
