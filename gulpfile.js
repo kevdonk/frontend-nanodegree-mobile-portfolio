@@ -23,7 +23,6 @@ gulp.task('html', function() {
 gulp.task('viewshtml', function() {
 	return gulp.src('views/*.html')
 	.pipe(htmlmin({collapseWhitespace: true}))
-	.pipe(inlinecss())
 	.pipe(gulp.dest('dist/views/'));
 });
 
@@ -83,7 +82,6 @@ gulp.task('css', function() {
 
 gulp.task('viewscss', function() {
 	return gulp.src('views/css/*.css')
-	.pipe(uncss({html: glob.sync('views/*.html') }))
 	.pipe(cssmin())
 	.pipe(gulp.dest('dist/views/css/'));
 });
