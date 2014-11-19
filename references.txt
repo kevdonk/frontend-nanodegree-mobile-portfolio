@@ -33,3 +33,5 @@ http://davidwalsh.name/translate3d
 http://stackoverflow.com/questions/17465886/reading-chrome-frame-rate-results-in-devtools
 
 http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
+
+http://blog.futtta.be/2014/02/13/should-you-inline-or-defer-blocking-css/

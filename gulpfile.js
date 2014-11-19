@@ -82,6 +82,7 @@ gulp.task('css', function() {
 
 gulp.task('viewscss', function() {
 	return gulp.src('views/css/*.css')
+	.pipe(concat('style.css'))
 	.pipe(cssmin())
 	.pipe(gulp.dest('dist/views/css/'));
 });
