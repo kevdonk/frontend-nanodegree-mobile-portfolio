@@ -20,12 +20,27 @@ gulp.task('html', function() {
 	.pipe(gulp.dest('dist'));
 });
 
+gulp.task('viewshtml', function() {
+	return gulp.src('views/*.html')
+	.pipe(htmlmin({collapseWhitespace: true}))
+	.pipe(inlinecss())
+	.pipe(gulp.dest('dist/views/'));
+});
+
 gulp.task('png', function() {
 	return gulp.src('img/*.png')
 	.pipe(imgmin({
 		use: [pngcrush()]
 	}))
 	.pipe(gulp.dest('dist/img/'));
+});
+
+gulp.task('viewspng', function() {
+	return gulp.src('views/images/*.png')
+	.pipe(imgmin({
+		use: [pngcrush()]
+	}))
+	.pipe(gulp.dest('dist/views/images/'));
 });
 
 gulp.task('jpg', function() {
@@ -37,6 +52,15 @@ gulp.task('jpg', function() {
 	.pipe(gulp.dest('dist/img/'));
 });
 
+gulp.task('viewsjpg', function() {
+	return gulp.src('views/images/*.jpg')
+	.pipe(imgmin({
+		progressive: true,
+		use: [pngcrush()]
+	}))
+	.pipe(gulp.dest('dist/views/images/'));
+});
+
 gulp.task('scripts', function() {
 	return gulp.src('js/*.js')
 	.pipe(concat('perfmatters.js'))
@@ -44,6 +68,11 @@ gulp.task('scripts', function() {
 	.pipe(gulp.dest('dist/js/'));
 });
 
+gulp.task('viewsscripts', function() {
+	return gulp.src('views/js/*.js')
+	.pipe(uglify())
+	.pipe(gulp.dest('dist/views/js/'));
+});
 
 gulp.task('css', function() {
 	return gulp.src('css/*.css')
@@ -52,8 +81,21 @@ gulp.task('css', function() {
 	.pipe(gulp.dest('dist/css/'));
 });
 
+gulp.task('viewscss', function() {
+	return gulp.src('views/css/*.css')
+	.pipe(uncss({html: glob.sync('views/*.html') }))
+	.pipe(cssmin())
+	.pipe(gulp.dest('dist/views/css/'));
+});
+
 gulp.task('jshint', function() {
 	return gulp.src('js/*.js')
+	.pipe(jshint())
+	.pipe(jshint.reporter('default'));
+});
+
+gulp.task('viewsjshint', function() {
+	return gulp.src('views/js/*.js')
 	.pipe(jshint())
 	.pipe(jshint.reporter('default'));
 });
@@ -70,5 +112,6 @@ gulp.task('watch', function() {
 });
 
 gulp.task('build', ['jshint', 'scripts','css','html', 'png','jpg']);
+gulp.task('viewsbuild', ['viewsjshint', 'viewsscripts','viewscss','viewshtml', 'viewspng','viewsjpg']);
 
 gulp.task('default', ['build','watch']);

@@ -7,3 +7,29 @@ https://github.com/gulpjs/gulp/blob/master/docs/README.md
 
 use gulp to push to github
 http://charliegleason.com/articles/deploying-to-github-pages-with-gulp 
+
+60FPS (have read lots more articles, tried to list the ones that I have actually gleaned info useable in this project)
+
+http://www.smashingmagazine.com/2013/06/10/pinterest-paint-performance-case-study/
+
+http://jankfree.org/
+
+https://github.com/GoogleChrome/jank-busters/blob/master/examples/slowpaint.html
+
+http://addyosmani.com/blog/devtools-visually-re-engineering-css-for-faster-paint-times/
+
+http://addyosmani.com/blog/performance-optimisation-with-timeline-profiles/
+
+http://updates.html5rocks.com/2013/02/Profiling-Long-Paint-Times-with-DevTools-Continuous-Painting-Mode
+
+http://www.html5rocks.com/en/tutorials/speed/html5/
+
+http://techportal.inviqa.com/2014/04/09/improve-rendering-performance-with-chrome-dev-tools/
+
+http://aerotwist.com/blog/on-translate3d-and-layer-creation-hacks/
+
+http://davidwalsh.name/translate3d
+
+http://stackoverflow.com/questions/17465886/reading-chrome-frame-rate-results-in-devtools
+
+http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
