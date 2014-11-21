@@ -24,6 +24,14 @@ http://updates.html5rocks.com/2013/02/Profiling-Long-Paint-Times-with-DevTools-C
 
 http://www.html5rocks.com/en/tutorials/speed/html5/
 
+http://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/
+
+http://kristerkari.github.io/adventures-in-webkit-land/blog/2013/08/30/fixing-a-parallax-scrolling-website-to-run-in-60-fps/
+
+http://www.html5rocks.com/en/tutorials/speed/parallax/
+
+http://www.html5rocks.com/en/tutorials/speed/animations/
+
 http://techportal.inviqa.com/2014/04/09/improve-rendering-performance-with-chrome-dev-tools/
 
 http://aerotwist.com/blog/on-translate3d-and-layer-creation-hacks/
