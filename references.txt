@@ -1,3 +1,5 @@
+Thanks to Haopei Yang. We shared many resources and discussions on the road to optimization
+
 http://updates.html5rocks.com/2014/06/Automating-Web-Performance-Measurement
 
 http://yeoman.io/blog/performance-optimization.html
@@ -7,6 +9,7 @@ https://github.com/gulpjs/gulp/blob/master/docs/README.md
 
 use gulp to push to github
 http://charliegleason.com/articles/deploying-to-github-pages-with-gulp 
+
 
 60FPS (have read lots more articles, tried to list the ones that I have actually gleaned info useable in this project)
 
