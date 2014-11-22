@@ -12,6 +12,7 @@ var inlinecss = require('gulp-inline-css');
 var jpegtran = require('imagemin-jpegtran');
 var optipng = require('imagemin-optipng');
 var pngcrush = require('imagemin-pngcrush');
+var webp = require('gulp-webp');
 
 gulp.task('html', function() {
 	return gulp.src('*.html')
@@ -31,6 +32,7 @@ gulp.task('png', function() {
 	.pipe(imgmin({
 		use: [pngcrush()]
 	}))
+	.pipe(webp())
 	.pipe(gulp.dest('dist/img/'));
 });
 
@@ -39,6 +41,7 @@ gulp.task('viewspng', function() {
 	.pipe(imgmin({
 		use: [pngcrush()]
 	}))
+	.pipe(webp())
 	.pipe(gulp.dest('dist/views/images/'));
 });
 
@@ -48,6 +51,7 @@ gulp.task('jpg', function() {
 		progressive: true,
 		use: [pngcrush()]
 	}))
+	.pipe(webp())
 	.pipe(gulp.dest('dist/img/'));
 });
 
@@ -57,6 +61,7 @@ gulp.task('viewsjpg', function() {
 		progressive: true,
 		use: [pngcrush()]
 	}))
+	.pipe(webp())
 	.pipe(gulp.dest('dist/views/images/'));
 });
 
